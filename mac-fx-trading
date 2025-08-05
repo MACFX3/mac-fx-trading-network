@@ -1,0 +1,68 @@
+import { useState } from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Mail, Phone } from 'lucide-react';
+export default function MacFxTradingNetwork() {
+  const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [file, setFile] = useState(null);
+  const handleSubmit = () => {
+    alert(Thank you! Your proof of payment has been submitted. We'll review and send your mentorship access shortly.\n\nEmail: ${email}\nWhatsApp: ${whatsapp});
+  };
+  return (
+    <div className="p-6 max-w-4xl mx-auto space-y-10">
+      <h1 className="text-4xl font-bold text-center text-blue-700">Mac Fx Trading Network</h1>
+      <p className="text-center text-gray-600 text-lg">Master Forex with our expert mentorship program.</p>
+      <Card>
+        <CardContent className="space-y-4 p-6">
+          <h2 className="text-2xl font-semibold">Mentorship Program</h2>
+          <p>Get access to our full mentorship program covering technical analysis, risk management, psychology, and strategy development.</p>
+          <p className="text-green-600 font-semibold">Price: R1500 once-off</p>
+          <Input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            type="tel"
+            placeholder="Enter your WhatsApp number"
+            value={whatsapp}
+            onChange={(e) => setWhatsapp(e.target.value)}
+          />
+          <Input
+            type="file"
+            accept="image/*,application/pdf"
+            onChange={(e) => setFile(e.target.files[0])}
+          />
+          <Button onClick={handleSubmit} className="w-full">Submit Proof of Payment</Button>
+          <p className="text-sm text-gray-500 mt-2">Your payment proof will be reviewed. Access will be sent to your email or WhatsApp within 24 hours. For support, contact: <strong>ljmamfengu@gmail.com</strong></p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardContent className="space-y-4 p-6">
+          <h2 className="text-2xl font-semibold">Payment Options</h2>
+          <div>
+            <h3 className="text-lg font-medium">PayPal</h3>
+            <p>Send payment to: <strong>ljmamfengu@gmail.com</strong></p>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium">Bank Transfer</h3>
+            <p><strong>Account Holder:</strong> Lunako Josiah Mamfengu</p>
+            <p><strong>Bank Name:</strong> TymeBank</p>
+            <p><strong>Branch Code:</strong> 678910</p>
+            <p><strong>Account Number:</strong> 51099747927</p>
+          </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardContent className="space-y-4 p-6">
+          <h2 className="text-2xl font-semibold">Contact Us</h2>
+          <p className="flex items-center gap-2"><Mail className="w-5 h-5" /> macfxtrading@gmail.com</p>
+          <p className="flex items-center gap-2"><Phone className="w-5 h-5" /> +27 71 234 5678</p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
